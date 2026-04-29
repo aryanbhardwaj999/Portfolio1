@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiArrowRight, FiDownload, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
-import Typed from 'react-typed';
+import { Typed } from 'react-typed';
 
 const Home = () => {
   const socialLinks = [
