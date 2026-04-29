@@ -1,10 +1,29 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiArrowRight, FiDownload, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
-import { Typed } from 'react-typed';
+import Typed from 'typed.js';
 
 const Home = () => {
+  const typedRef = useRef(null);
+
+  useEffect(() => {
+    const typed = new Typed(typedRef.current, {
+      strings: [
+        'Full Stack Developer',
+        'UI/UX Designer',
+        'Problem Solver',
+        'Tech Enthusiast'
+      ],
+      typeSpeed: 50,
+      backSpeed: 30,
+      loop: true,
+    });
+
+    return () => {
+      typed.destroy();
+    };
+  }, []);
   const socialLinks = [
     { icon: FiGithub, href: 'https://github.com/yourusername', label: 'GitHub' },
     { icon: FiLinkedin, href: 'https://linkedin.com/in/yourusername', label: 'LinkedIn' },
@@ -71,18 +90,7 @@ const Home = () => {
                </h1>
                <div className="text-xl md:text-2xl text-gray-600">
                 I'm a{' '}
-                <Typed
-                  strings={[
-                    'Full Stack Developer',
-                    'UI/UX Designer',
-                    'Problem Solver',
-                    'Tech Enthusiast'
-                  ]}
-                  typeSpeed={50}
-                  backSpeed={30}
-                  loop
-                  className="text-primary-600 font-semibold"
-                />
+                <span ref={typedRef} className="text-primary-600 font-semibold" />
               </div>
             </motion.div>
 
