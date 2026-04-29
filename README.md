@@ -1,6 +1,6 @@
 # Portfolio Website
 
-एक modern और responsive portfolio website जिसमें animations और backend features हैं।
+A modern and responsive portfolio website featuring animations and backend functionality.
 
 ## Features
 
