@@ -12,10 +12,12 @@ const Blog = () => {
 
   useEffect(() => {
     fetchBlogs();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     filterBlogs();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [blogs, searchTerm, selectedTag]);
 
   const fetchBlogs = async () => {
